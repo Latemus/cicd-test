@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . /app
 
 # Install your application dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir python-telegram-bot==20.6
 
 # Run your application when the Docker container starts
 CMD ["python", "src/bot/main.py"]

@@ -29,8 +29,8 @@ if is_new_version_available; then
 
     # Run the updated image
     docker run -d --name $CONTAINER_NAME \
-      -e TELEGRAM_BOT_TOKEN \
-      -e TELEGRAM_CHAT_ID \
+      -e "$BOT_TOKEN" \
+      -e "$STARTUP_NOTIFICATION_CHAT_ID" \
     $IMAGE_NAME
 else
     echo "No new version available. Exiting..."
