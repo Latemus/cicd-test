@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ main ]
 
+env:
+  REGISTRY_IMAGE: latemus/ci-cd-test
+
 jobs:
   build:
     runs-on: ubuntu-latest
