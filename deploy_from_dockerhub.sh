@@ -21,17 +21,19 @@ if is_new_version_available; then
     echo "New version of $IMAGE_NAME is available. Updating and restarting..."
 
     # Stop and remove the current running container
-    docker stop $IMAGE_NAME
-    docker rm $IMAGE_NAME
+    docker stop $CONTAINER_NAME
+    docker rm $CONTAINER_NAME
 
     # Pull the latest image
     docker pull $IMAGE_NAME
 
     # Run the updated image
-    docker run -d --name $CONTAINER_NAME \
+    docker run $IMAGE_NAME \
+      -d \
+      --name $CONTAINER_NAME \
       -e "$BOT_TOKEN" \
       -e "$STARTUP_NOTIFICATION_CHAT_ID" \
-    $IMAGE_NAME
+
 else
     echo "No new version available. Exiting..."
 fi
