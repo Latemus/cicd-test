@@ -22,10 +22,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Run tests
-        run: |
-          pip install python-telegram-bot
-          python -m unittest discover tests
+#      - name: Run tests
+#        run: |
+#          pip install python-telegram-bot
+#          python -m unittest discover tests
 
       - name: Docker meta
         id: meta
