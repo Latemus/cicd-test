@@ -4,7 +4,7 @@ import platform
 
 from telegram.ext import Application
 
-import bot.config
+from bot import config
 
 logger = logging.getLogger(__name__)
 system_architecture = platform.machine()
