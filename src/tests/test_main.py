@@ -1,6 +1,6 @@
 import unittest
 
-from src.main import system_architecture
+from src.bot.main import system_architecture
 
 
 class TestArchitectureDetection(unittest.TestCase):

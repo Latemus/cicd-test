@@ -19,6 +19,7 @@ bot_token = os.getenv("BOT_TOKEN")
 # Chat id to which a message is sent on startup
 startup_notification_chat_id = os.getenv("STARTUP_NOTIFICATION_CHAT_ID")
 
+
 async def notify_startup(application: Application) -> None:
     target_chat_id = startup_notification_chat_id
     await application.bot.send_message(chat_id=target_chat_id, text=f'Bot started on platform {system_architecture}!')
