@@ -2,6 +2,10 @@
 
 source "$(dirname "$0")/config.sh"  # Load configuration
 
+# These environmental variables should be set
+echo "BOT_TOKEN: $BOT_TOKEN"
+echo "STARTUP_NOTIFICATION_CHAT_ID: $STARTUP_NOTIFICATION_CHAT_ID"
+
 # Define the Docker image name and version
 IMAGE_NAME="latemus/ci-cd-test:main"
 CONTAINER_NAME="ci-cd-test"
@@ -28,12 +32,10 @@ if is_new_version_available; then
     docker pull $IMAGE_NAME
 
     # Run the updated image
-    docker run $IMAGE_NAME \
-      -d \
-      --name $CONTAINER_NAME \
-      -e "$BOT_TOKEN" \
-      -e "$STARTUP_NOTIFICATION_CHAT_ID" \
-
+    docker run -d --name $CONTAINER_NAME \
+      -e BOT_TOKEN \
+      -e STARTUP_NOTIFICATION_CHAT_ID \
+    $IMAGE_NAME
 else
     echo "No new version available. Exiting..."
 fi

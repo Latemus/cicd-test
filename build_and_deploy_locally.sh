@@ -2,6 +2,10 @@
 
 source "$(dirname "$0")/config.sh"  # Load configuration
 
+# These environmental variables should be set
+echo "BOT_TOKEN: $BOT_TOKEN"
+echo "STARTUP_NOTIFICATION_CHAT_ID: $STARTUP_NOTIFICATION_CHAT_ID"
+
 # Define the Docker image name and version
 IMAGE_NAME="latemus/ci-cd-test"
 CONTAINER_NAME="ci-cd-test"
