@@ -3,7 +3,7 @@
 source "$(dirname "$0")/config.sh"  # Load configuration
 
 # Define the Docker image name and version
-IMAGE_NAME="latemus/ci-cd-test"
+IMAGE_NAME="latemus/ci-cd-test:main"
 CONTAINER_NAME="ci-cd-test"
 
 # Function to check if a new version is available

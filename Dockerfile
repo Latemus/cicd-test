@@ -11,4 +11,4 @@ COPY . /app
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Run your application when the Docker container starts
-CMD ["python", "bot/main.py"]
+CMD ["python", "src/main.py"]

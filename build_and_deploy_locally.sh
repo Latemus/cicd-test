@@ -7,13 +7,14 @@ IMAGE_NAME="latemus/ci-cd-test"
 CONTAINER_NAME="ci-cd-test"
 
 # Stop and remove the current running container
-docker stop $IMAGE_NAME
+docker stop $CONTAINER_NAME
+docker rm $CONTAINER_NAME
 
 # Pull the latest image
 docker build -t $IMAGE_NAME .
 
 # Run the updated image
 docker run -d --name $CONTAINER_NAME \
-  -e TELEGRAM_BOT_TOKEN \
-  -e TELEGRAM_CHAT_ID \
+  -e BOT_TOKEN \
+  -e STARTUP_NOTIFICATION_CHAT_ID \
 $IMAGE_NAME
